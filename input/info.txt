@@ -1,0 +1,45 @@
+-- MATSim Open Berlin Scenario --
+
+Properties:
+* Full-day plans
+* 3 modes: car, pt, slowPt
+* stable in terms of route and mode choice
+
+The approach:
+* The population for the scenario covers all Berlin and Brandenburg and has been generated based on the “Zensus 2011” (*).
+* Workplaces for employees are informed by the “Pendlerstatistik 2009” on a municipality level. Note that Berlin is only one
+ municipality, which makes this approach requiring refinement inside Berlin (while it is well-suited as it is for areas with
+ smaller municipalities like mainly found in Brandenburg) (*)
+
+* In terms of the choice of workplace locations for people in Berlin as well as secondary locations, the approach works as
+described by Ziemke, Nagel, Bhat (2015) (WP 14-15 on https://www.vsp.tu-berlin.de/publications/vspwp/). Very briefly:
+Daily activity-travel plans are generated for every agent four times, such that each agent has a set of four potential
+plans which differ in terms of activity locations (next to additional minor variations concerning other choice criteria).
+
+* Based on some 8,000+ traffic counts (i.e. 300+ traffic count stations with each 24 hourly counts), a Cadyts calibration
+has been used to choose those plans from each agents plan set that best contributes to a traffic pattern that resembles
+reality (Reality as given by mentioned traffic counts). (*) (***)
+
+* After each agent has been assigned with locations by the previous step (**), a mode choice calibration has been done
+which separates all agents into the car and two different teleported (pt) modes.
+- “Car" with a monetary distance rate of -0.0002; default parameters otherwise
+- “Pt” with a constant of -6.0 and a speed of 11.111m/s; default parameters otherwise
+- “SlowPt” with a constant of -3.0 and a speed of 4.167m/s; default parameters otherwise
+
+* Note that in the previous step (responsible for mode choice), no (Cadyts) calibration is active. As such, this step
+can also be regarded as a stability test in the sense of Ziemke, Nagel, Bhat (2015), i.e. a simulation run that confirms
+that choices stay that were initially made under the influence of Cadyts stay roughly the same after this influence is removed.
+
+(*) = More details on this seem out of scope here; they can be found in a the documentation
+(/shared-svn/studies/countries/de/berlin_scenario_2016/documentation.pdf) that I will be updating soon.
+(**) = You may have wondered why activities for *all* agents can be chosen in this step already, where the selection
+of modes is not yet observed. This is taken care for. Explaining seems out of scope here. Talk to me about it or check
+in the documentation soon.
+(***) = The result of this step, if you are interested, is under "runs-svn/berlin_scenario_2016/be_115a"
+
+Some results (validation):
+* Altogether, there are 16.42m trips.
+* Out of these, 3.17m trips are done by car and are Berlin-based and <100km long. The reference value from SrV 2008 is 3.20m trips.
+* The average travel time for these trips is 23.1min, the distance 11.1km (references from SrV 2008: 22.3km, 9.5km, respectively).
+* More importantly, see the plots below, where red = this scenario and blue = reference from SrV2008 below… (more plots in the run directory)
+* Also see the Google Earth screenshot below, which shows a count-simulation comparison for the morning peak.

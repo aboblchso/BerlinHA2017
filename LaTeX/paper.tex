@@ -1,0 +1,188 @@
+\documentclass{article}
+\usepackage[english]{babel}
+\usepackage[latin1]{inputenc} 
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{colortbl}
+\usepackage{tabularx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{ulem}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage[section]{placeins}
+\usepackage{amssymb}
+\usepackage{cite} %zum zitieren
+\usepackage[round]{natbib} %zum zitieren. "numbers" auch mögl. statt author-year
+\usepackage{blindtext} %to generate dummy text blocks
+
+\definecolor{mylinkcolor}{RGB}{0,0,175}
+\hypersetup{pdftitle={template},
+	colorlinks=true,
+	citecolor=mylinkcolor,
+	filecolor=mylinkcolor,
+	linkcolor=black,
+	urlcolor=black,
+	bookmarksnumbered=true
+}
+
+\usepackage[left=20mm,right=20mm,top=20mm,bottom=20mm]{geometry}
+
+\definecolor{darkgrey}{rgb}{0.8,0.8,0.8}
+\definecolor{lightgrey}{rgb}{0.95,0.95,0.95}
+
+\newcommand{\tododz}[1]{\textcolor{green}{[[TODO DZ: #1]]}}
+
+
+\begin{document}
+
+\title{Hausaufgabe 1}
+\date{19.06.2017}
+\author{Timofey Volotskiy, Matrikelnr. 357563}
+\maketitle
+
+%\tableofcontents
+
+\begin{abstract}
+	abstract...
+\end{abstract}
+
+\section{Maßnahme}
+In Rahmen der Hausaufgabe werden die Auswirkungen der Einführung von Tempo-30 Zone im Stadtgebiet Moabit eingeschätzt. Eine maximale Geschwindigkeit von 30 km/h ist auf jeder Straße 24h pro Tag eingesetzt.  
+
+\section{Introduction}
+\label{sec:intro}
+
+
+\section{Methodology}
+\label{sec:meth}
+
+
+\subsection{Versatility}
+\label{sec:versatibility}
+
+
+\section{Results}
+\label{sec:res}
+bla
+
+
+
+
+\subsection{Shopping}
+\label{subsec:introsubsect1}
+
+
+\begin{figure}[htbp]
+	\centering
+	\begin{minipage}[t]{0.49\linewidth}
+		\centering
+		\subcaption{Car}
+		\label{fig:act}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.49\linewidth}
+		\centering
+		\subcaption{Bike}
+		\label{fig:veh}
+	\end{minipage}
+	\begin{minipage}[t]{0.49\linewidth}
+		\centering
+		\subcaption{Walk}
+		\label{fig:veh}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.49\linewidth}
+		\centering
+		\subcaption{(Regular) Public Transport}
+		\label{fig:veh}
+	\end{minipage}
+	\begin{minipage}[t]{0.49\linewidth}
+		\centering
+		\subcaption{(Regular) Public Transport}
+		\label{fig:veh}
+	\end{minipage}
+	\begin{minipage}[t]{0.49\linewidth}
+		\centering
+		\subcaption{(Regular) Public Transport}
+		\label{fig:veh}
+	\end{minipage}
+	\caption{Accessibility of (Formal) Shopping Facilities}
+\end{figure}
+
+
+
+
+
+\begin{figure}[htbp]
+	\centering
+	\begin{minipage}[t]{0.49\linewidth}
+		\centering
+		\subcaption{Car}
+		\label{fig:act}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.49\linewidth}
+		\centering
+		\subcaption{Bike}
+		\label{fig:veh}
+	\end{minipage}
+	\begin{minipage}[t]{0.49\linewidth}
+		\centering
+		\subcaption{Walk}
+		\label{fig:veh}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.49\linewidth}
+		\centering
+		\subcaption{(Regular) Public Transport}
+		\label{fig:veh}
+	\end{minipage}
+	\caption{Accessibility of Education Facilities}
+\end{figure}
+
+\citet{HorniNagelAxhausen2015MATSimBook}
+
+
+\subsection{sub title 2}
+\label{sec:introsubsect2}
+
+\begin{table}[htbp]
+	\centering
+	\setlength{\tabcolsep}{10pt} % gap between columns
+	\renewcommand{\arraystretch}{1.5} % gap between lines
+	
+	\begin{tabular}{c | c | c }
+		\toprule[1.5pt]
+		\rowcolor{white} & column1 & column2 \\
+		\midrule[1pt]
+		\cellcolor{pink} line1 & \cellcolor{green} xyz & \cellcolor{brown}abc \\
+		\cellcolor{lightgrey} line2 & asd & \textcolor{BrickRed}{important} \\
+		\midrule[1pt]
+		\cellcolor{lightgrey} another topic & fghfg & sfs \\
+		\bottomrule[1.5pt]
+	\end{tabular}
+	
+	\caption{table example}
+	\label{tab:tableexample}
+\end{table}
+
+bla s.~Tab.~\ref{tab:tableexample}
+
+\section{Next section}
+\label{sec:nextsection}
+
+bla \tododz{Texttexttext}
+
+
+
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+bla
+
+\bibliographystyle{myplainnat}
+\bibliography{../../../documents/inputs/bib/ref,../../../documents/inputs/bib/vsp}
+
+\end{document}
